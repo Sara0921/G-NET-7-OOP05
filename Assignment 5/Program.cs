@@ -1,4 +1,6 @@
-﻿namespace Assignment_5
+﻿using System.Threading.Channels;
+
+namespace Assignment_5
 {
     internal class Program
     {
@@ -26,6 +28,16 @@
             //((IEnglishSpeaker)translator).Greet();
             //((IArabicSpeaker)translator).Greet();
 
+            #endregion
+            #region Question03
+            //>>Shallow Copy :duplicates the object itself, but any reference-type fields inside it still point to the same objects in memory as the original.
+            //>>Deep Copy : A deep copy duplicates the object and every object it references, all the way down.
+            //When would you use each one
+            //shallow copy : Your object only contains value-type , You intentionally want both objects to share the same referenced data
+            //Deep Copy : Your object contains reference-type , You need the copy to be fully independent
+            //The Risk of Shallow Copy with Reference Fields
+            //>>When you shallow-copy an object that has reference-type fields, both the original and the copy point to the exact same nested object. This means:
+            //Changing a nested field through the copy also changes it in the original
             #endregion
             #endregion
         }
