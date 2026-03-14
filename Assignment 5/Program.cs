@@ -1,4 +1,6 @@
-﻿using System.Threading.Channels;
+﻿using System;
+using System.Reflection;
+using System.Threading.Channels;
 
 namespace Assignment_5
 {
@@ -39,7 +41,17 @@ namespace Assignment_5
             //>>When you shallow-copy an object that has reference-type fields, both the original and the copy point to the exact same nested object. This means:
             //Changing a nested field through the copy also changes it in the original
             #endregion
+            #region Question04
+            //output :
+            //>>Dev - Testing
+            //>>QA - Testing
+            //Why :
+            //Title — each employee gets their own copy because assigning a new string("QA") creates a new string object for e2.e1.Title stays untouched.
+            // Dept — MemberwiseClone() only copies the reference, not the actual Department object.So both e1 and e2 are pointing to the same Department in memory.When you change e2.Dept.Name,
+            //you're changing the one shared object — which e1 also sees.
+
             #endregion
+                #endregion
         }
     }
 }
